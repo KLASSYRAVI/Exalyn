@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exalyn</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Great+Vibes&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-black text-white font-sans overflow-x-hidden selection:bg-blue-500 selection:text-white">
+
+    <nav class="fixed top-0 left-0 w-full z-50 px-8 py-4 flex justify-between items-center backdrop-blur-md bg-black/20 border-b border-white/5"
+        id="main-nav">
+        <!-- Brand -->
+        <div id="firstPart" class="text-2xl font-bold tracking-tighter cursor-pointer text-white"
+            onclick="window.location.reload()">
+            Exalyn
+        </div>
+
+        <!-- Menu Container -->
+        <div id="secondPart" class="relative flex items-center gap-10">
+            <button class="nav-btn text-lg font-medium text-slate-300 hover:text-white transition-colors opacity-0"
+                data-target="home">Home</button>
+            <button class="nav-btn text-lg font-medium text-slate-300 hover:text-white transition-colors opacity-0"
+                data-target="notes">Note Editor</button>
+            <button class="nav-btn text-lg font-medium text-slate-300 hover:text-white transition-colors opacity-0"
+                data-target="whiteboard">WhiteBoard</button>
+            <button class="nav-btn text-lg font-medium text-slate-300 hover:text-white transition-colors opacity-0"
+                data-target="goals">Goal Tracker</button>
+            <button class="nav-btn text-lg font-medium text-slate-300 hover:text-white transition-colors opacity-0"
+                data-target="tasks">Task Management</button>
+
+            <!-- Animated Underline -->
+            <div id="nav-line"
+                class="absolute -bottom-4 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent scale-x-0 origin-center">
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="pt-0 min-h-screen relative z-10 w-full">
+        <!-- View: Home (Animation Stage) -->
+        <section id="home"
+            class="view-section active flex flex-col items-center justify-center min-h-screen relative perspective-1000 pt-20">
+
+            <!-- Hero Text Container -->
+            <div class="z-20 relative text-center">
+                <h1 id="hero-text" class="text-9xl font-bold text-white opacity-0">
+                    Exalyn
+                </h1>
+                <p id="hero-slogan"
+                    class="text-center text-blue-300 font-light tracking-widest uppercase text-sm mt-4 opacity-0 transform translate-y-4">
+                    Where expression meets structure
+                </p>
+            </div>
+
+            <!-- Floating Cards (Initially Centered & Hidden) -->
+            <!-- Card 1: Notes (Top Left - Rotated Left) -->
+            <div class="hero-card absolute z-10 w-64 h-40 bg-slate-800/80 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl flex flex-col items-center justify-center p-4 transform scale-0"
+                style="--rot: -6deg; --x: -380px; --y: -150px;">
+                <div class="w-full h-2 bg-slate-700 rounded mb-2 w-1/2 self-start"></div>
+                <div class="w-full h-full bg-slate-700/50 rounded flex gap-2 p-2">
+                    <div class="w-1/3 h-full bg-slate-600/50 rounded"></div>
+                    <div class="w-2/3 h-full space-y-2">
+                        <div class="w-full h-2 bg-slate-600/50 rounded"></div>
+                        <div class="w-3/4 h-2 bg-slate-600/50 rounded"></div>
+                    </div>
+                </div>
+                <div class="mt-2 text-xs text-blue-300 font-bold tracking-wider">NOTE EDITOR</div>
+            </div>
+
+            <!-- Card 2: Whiteboard (Top Right - Rotated Right) -->
+            <div class="hero-card absolute z-10 w-64 h-40 bg-slate-800/80 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl flex flex-col items-center justify-center p-4 transform scale-0"
+                style="--rot: 6deg; --x: 380px; --y: -130px;">
+                <div class="w-full h-full border border-dashed border-slate-600/50 rounded relative">
+                    <div
+                        class="absolute top-1/2 left-1/2 w-8 h-8 border-2 border-emerald-400 rounded-full -translate-x-1/2 -translate-y-1/2">
+                    </div>
+                    <div
+                        class="absolute top-1/4 left-1/4 w-0 h-0 border-l-[6px] border-l-transparent border-b-[10px] border-b-amber-400 border-r-[6px] border-r-transparent transform rotate-12">
+                    </div>
+                </div>
+                <div class="mt-2 text-xs text-emerald-300 font-bold tracking-wider">WHITEBOARD</div>
+            </div>
+
+            <!-- Card 3: Goals (Bottom Left - Rotated Right) -->
+            <div class="hero-card absolute z-10 w-64 h-40 bg-slate-800/80 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl flex flex-col items-center justify-center p-4 transform scale-0"
+                style="--rot: 6deg; --x: -360px; --y: 170px;">
+                <div class="w-full space-y-3">
+                    <div class="flex items-center gap-2">
+                        <div class="w-4 h-4 rounded-full border border-emerald-400"></div>
+                        <div class="h-2 w-3/4 bg-slate-700 rounded"></div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-4 h-4 rounded-full bg-emerald-400"></div>
+                        <div class="h-2 w-1/2 bg-slate-700 rounded"></div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-4 h-4 rounded-full border border-emerald-400"></div>
+                        <div class="h-2 w-2/3 bg-slate-700 rounded"></div>
+                    </div>
+                </div>
+                <div class="mt-2 text-xs text-emerald-500 font-bold tracking-wider">GOAL TRACKER</div>
+            </div>
+
+            <!-- Card 4: Tasks (Bottom Right - Rotated Left) -->
+            <div class="hero-card absolute z-10 w-64 h-40 bg-slate-800/80 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl flex flex-col items-center justify-center p-4 transform scale-0"
+                style="--rot: -6deg; --x: 390px; --y: 160px;">
+                <div class="w-full h-full flex flex-col justify-between">
+                    <div class="flex justify-between items-center">
+                        <div
+                            class="w-8 h-8 bg-amber-500/20 rounded text-amber-500 flex items-center justify-center text-xs">
+                            A</div>
+                        <div
+                            class="w-8 h-8 bg-blue-500/20 rounded text-blue-500 flex items-center justify-center text-xs">
+                            B</div>
+                    </div>
+                    <div class="w-full bg-slate-700 rounded h-1 overflow-hidden">
+                        <div class="bg-amber-400 w-2/3 h-full"></div>
+                    </div>
+                </div>
+                <div class="mt-2 text-xs text-amber-400 font-bold tracking-wider">TASK MANAGER</div>
+            </div>
+
+        </section>
+
+        <!-- Marquee Transition (Smaller & Cleaner) -->
+        <div class="relative w-full py-8 bg-black/50 border-t border-white/5 overflow-hidden z-20 mt-auto backdrop-blur-sm opacity-0"
+            id="marquee-container">
+            <div class="flex whitespace-nowrap" id="marquee-text">
+                <span class="text-4xl font-bold px-4 stroke-text text-slate-500/30 font-inter tracking-widest">
+                    ORGANIZE • VISUALIZE • ACHIEVE • CREATE • ORGANIZE • VISUALIZE • ACHIEVE • CREATE •
+                </span>
+                <span class="text-4xl font-bold px-4 stroke-text text-slate-500/30 font-inter tracking-widest">
+                    ORGANIZE • VISUALIZE • ACHIEVE • CREATE • ORGANIZE • VISUALIZE • ACHIEVE • CREATE •
+                </span>
+                <span class="text-4xl font-bold px-4 stroke-text text-slate-500/30 font-inter tracking-widest">
+                    ORGANIZE • VISUALIZE • ACHIEVE • CREATE • ORGANIZE • VISUALIZE • ACHIEVE • CREATE •
+                </span>
+                <span class="text-4xl font-bold px-4 stroke-text text-slate-500/30 font-inter tracking-widest">
+                    ORGANIZE • VISUALIZE • ACHIEVE • CREATE • ORGANIZE • VISUALIZE • ACHIEVE • CREATE •
+                </span>
+            </div>
+        </div>
+
+        </div>
+
+        <!-- Feature 1: Interactive Note Editor -->
+        <section
+            class="min-h-screen bg-black relative z-20 flex items-center justify-center p-8 border-t border-white/5"
+            id="notes-feature">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 max-w-7xl w-full items-center">
+
+                <!-- Description -->
+                <div class="space-y-8">
+                    <h3 class="text-blue-400 tracking-[0.3em] text-sm font-bold uppercase feature-text-anim">Structured
+                        Flow</h3>
+                    <h2 class="text-6xl font-bold leading-tight feature-text-anim">
+                        Craft Your <br>
+                        <span class="text-slate-500">Thoughts</span>
+                    </h2>
+                    <p class="text-slate-400 text-xl leading-relaxed max-w-md feature-text-anim">
+                        Break free from linear documents. Treat every idea as a block—rearrange, connect, and refine
+                        with a simple click.
+                    </p>
+                    <div class="flex items-center gap-4 text-sm text-slate-500 font-mono feature-text-anim">
+                        <span>// Drag to reorder</span>
+                        <span class="px-2 text-slate-700">•</span>
+                        <span>// Markdown support</span>
+                    </div>
+                </div>
+
+                <!-- Interactive Demo Block -->
+                <!-- Reduced height, lighter background effects -->
+                <div class="relative w-full h-[350px] bg-slate-900 rounded-2xl border border-white/10 overflow-hidden group cursor-none"
+                    id="note-demo-container">
+
+                    <!-- Background Mesh/Grid Effect -->
+                    <div class="absolute inset-0 opacity-20"
+                        style="background-image: radial-gradient(#3b82f6 1px, transparent 1px); background-size: 30px 30px;">
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5 animate-pulse-slow">
+                    </div>
+
+                    <!-- Custom Cursor (Hidden by default) -->
+                    <div id="note-cursor"
+                        class="pointer-events-none fixed top-0 left-0 z-50 flex flex-col items-center justify-center text-center opacity-0 transition-opacity duration-200">
+                        <div
+                            class="w-16 h-16 bg-blue-500/20 backdrop-blur-sm rounded-full border border-blue-400/40 flex items-center justify-center">
+                            <span class="text-blue-200 font-bold tracking-widest text-[10px]">CRAFT</span>
+                        </div>
+                    </div>
+
+                    <!-- Add Button (Center) -->
+                    <div class="absolute inset-0 flex items-center justify-center z-10" id="add-btn-wrapper">
+                        <button id="add-note-btn"
+                            class="px-10 py-4 border-2 border-dashed border-slate-600 rounded-xl flex items-center justify-center gap-3 text-slate-300 hover:text-white hover:border-white hover:bg-slate-800 transition-all duration-300 group">
+                            <span
+                                class="text-xl font-light group-hover:scale-110 transition-transform duration-300">+</span>
+                            <span class="font-bold tracking-widest uppercase text-sm">Add Note</span>
+                        </button>
+                    </div>
+
+                    <!-- Spawn Area -->
+                    <div id="spawn-area" class="absolute inset-0"></div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature 2: Whiteboard -->
+        <section
+            class="min-h-screen bg-black relative z-20 flex items-center justify-center p-8 border-t border-white/5"
+            id="whiteboard-feature">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 max-w-7xl w-full items-center">
+
+                <!-- Handwritten Demo Block (Left) -->
+                <div class="relative w-full h-[350px] bg-gradient-to-br from-emerald-900/20 via-slate-900 to-slate-900 rounded-2xl border border-emerald-500/20 overflow-hidden cursor-none"
+                    id="whiteboard-demo-container">
+
+                    <!-- Background Pattern -->
+                    <div class="absolute inset-0 opacity-10"
+                        style="background-image: radial-gradient(#10b981 1px, transparent 1px); background-size: 40px 40px;">
+                    </div>
+
+                    <!-- Custom Cursor -->
+                    <div id="whiteboard-cursor"
+                        class="pointer-events-none fixed top-0 left-0 z-50 flex flex-col items-center justify-center text-center opacity-0 transition-opacity duration-200">
+                        <div
+                            class="w-16 h-16 bg-emerald-500/20 backdrop-blur-sm rounded-full border border-emerald-400/40 flex items-center justify-center">
+                            <span class="text-emerald-200 font-bold tracking-widest text-[10px]">DIVE IN</span>
+                        </div>
+                    </div>
+
+                    <!-- Handwritten "Exalyn" SVG -->
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <svg width="500" height="200" viewBox="0 0 500 200" class="overflow-visible">
+                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"
+                                class="font-display text-8xl fill-transparent stroke-white stroke-2 opacity-0"
+                                id="whiteboard-text" transform="skewX(-10)">
+                                Exalyn
+                            </text>
+                        </svg>
+                    </div>
+
+                    <!-- Subtle Glow Effect -->
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-emerald-500/5 to-transparent pointer-events-none">
+                    </div>
+                </div>
+
+                <!-- Description (Right) -->
+                <div class="space-y-8">
+                    <h3 class="text-emerald-400 tracking-[0.3em] text-sm font-bold uppercase whiteboard-text-anim">
+                        Infinite Canvas</h3>
+                    <h2 class="text-6xl font-bold leading-tight whiteboard-text-anim">
+                        Sketch Your <br>
+                        <span class="text-slate-500">Vision</span>
+                    </h2>
+                    <p class="text-slate-400 text-xl leading-relaxed max-w-md whiteboard-text-anim">
+                        An endless digital canvas for your ideas. Draw, diagram, and brainstorm without boundaries.
+                        Perfect for visual thinkers.
+                    </p>
+                    <div class="flex items-center gap-4 text-sm text-slate-500 font-mono whiteboard-text-anim">
+                        <span>// Freehand drawing</span>
+                        <span class="px-2 text-slate-700">•</span>
+                        <span>// Infinite zoom</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- View: Whiteboard -->
+        <section id="whiteboard" class="view-section hidden">
+            <div
+                class="h-[75vh] w-full border border-slate-800 rounded-xl bg-slate-900/50 flex flex-col items-center justify-center relative overflow-hidden">
+                <div class="absolute inset-0 opacity-20"
+                    style="background-image: radial-gradient(#4f4f4f 1px, transparent 1px); background-size: 20px 20px;">
+                </div>
+                <h2 class="text-3xl font-bold text-slate-700 relative z-10">Whiteboard Canvas</h2>
+            </div>
+        </section>
+
+        <!-- View: Goals -->
+        <section id="goals" class="view-section hidden">
+            <div class="max-w-4xl mx-auto">
+                <header class="mb-8 border-b border-slate-800 pb-4">
+                    <h2 class="text-3xl font-bold text-emerald-400">Goals</h2>
+                </header>
+                <div class="p-6 bg-slate-800/50 rounded-xl border border-slate-700/50">
+                    <p class="text-center text-slate-500">No goals set yet.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- View: Tasks -->
+        <section id="tasks" class="view-section hidden">
+            <div class="max-w-4xl mx-auto">
+                <header class="mb-8 border-b border-slate-800 pb-4">
+                    <h2 class="text-3xl font-bold text-amber-400">Tasks</h2>
+                </header>
+                <div class="p-6 bg-slate-800/50 rounded-xl border border-slate-700/50">
+                    <p class="text-center text-slate-500">Task list empty.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="/src/app.js"></script>
+    <script type="module" src="/src/style.css"></script>
+</body>
+
+</html>

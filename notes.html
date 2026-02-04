@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Note Editor - Exalyn</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Great+Vibes&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-black text-white font-sans overflow-x-hidden selection:bg-blue-500 selection:text-white">
+
+    <nav class="fixed top-0 left-0 w-full z-50 px-8 py-4 flex justify-between items-center backdrop-blur-md bg-black/20 border-b border-white/5"
+        id="main-nav">
+        <!-- Brand -->
+        <div class="text-2xl font-bold tracking-tighter cursor-pointer text-white" onclick="window.location.href='/'">
+            Exalyn
+        </div>
+
+        <!-- Menu Container -->
+        <div class="relative flex items-center gap-10">
+            <button class="text-lg font-medium text-slate-300 hover:text-white transition-colors"
+                onclick="window.location.href='/'">Home</button>
+            <button class="text-lg font-medium text-white transition-colors">Note Editor</button>
+            <button class="text-lg font-medium text-slate-300 hover:text-white transition-colors"
+                onclick="window.location.href='/whiteboard.html'">WhiteBoard</button>
+            <button class="text-lg font-medium text-slate-300 hover:text-white transition-colors"
+                onclick="window.location.href='/goals.html'">Goal Tracker</button>
+            <button class="text-lg font-medium text-slate-300 hover:text-white transition-colors"
+                onclick="window.location.href='/tasks.html'">Task Management</button>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="pt-28 px-8 pb-10 min-h-screen">
+        <div class="max-w-4xl mx-auto">
+            <header class="mb-8 border-b border-slate-800 pb-4">
+                <h1 class="text-5xl font-bold text-white mb-2">Note Editor</h1>
+                <p class="text-slate-400 text-lg">Block-based editing environment for your thoughts.</p>
+            </header>
+
+            <!-- Note Editor Placeholder -->
+            <div class="space-y-6">
+                <div
+                    class="p-6 bg-slate-800/50 rounded-xl border border-slate-700/50 hover:border-blue-500/30 transition-colors">
+                    <h3 class="text-xl font-bold text-white mb-3">Welcome to Your Note Editor</h3>
+                    <p class="text-slate-400 leading-relaxed">
+                        This is your dedicated note-taking space. Start creating blocks, organize your thoughts, and
+                        build your knowledge base.
+                    </p>
+                </div>
+
+                <div
+                    class="h-96 flex items-center justify-center border-2 border-dashed border-slate-800 rounded-lg text-slate-600 hover:border-slate-700 hover:text-slate-500 transition-colors cursor-pointer">
+                    <div class="text-center">
+                        <div class="text-6xl mb-4">+</div>
+                        <div class="text-lg">Click to add your first note block</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="/src/app.js"></script>
+    <script type="module" src="/src/style.css"></script>
+</body>
+
+</html>

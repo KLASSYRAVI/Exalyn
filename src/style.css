@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.font-display {
+    font-family: 'Great Vibes', cursive;
+}
+
+.perspective-1000 {
+    perspective: 1000px;
+}
+
+/* Hollow Text for Marquee */
+.stroke-text {
+    -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.5);
+    color: transparent;
+}
+
+.animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 0.1;
+    }
+}
+
+body {
+    background-color: #111;
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+}
