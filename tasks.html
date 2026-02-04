@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Management - Exalyn</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Great+Vibes&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-black text-white font-sans overflow-x-hidden selection:bg-amber-500 selection:text-black">
+
+    <nav class="fixed top-0 left-0 w-full z-50 px-8 py-4 flex justify-between items-center backdrop-blur-md bg-black/20 border-b border-white/5"
+        id="main-nav">
+        <!-- Brand -->
+        <div class="text-2xl font-bold tracking-tighter cursor-pointer text-white" onclick="window.location.href='/'">
+            Exalyn
+        </div>
+
+        <!-- Menu Container -->
+        <div class="relative flex items-center gap-10">
+            <button class="text-lg font-medium text-slate-300 hover:text-white transition-colors"
+                onclick="window.location.href='/'">Home</button>
+            <button class="text-lg font-medium text-slate-300 hover:text-white transition-colors"
+                onclick="window.location.href='/notes.html'">Note Editor</button>
+            <button class="text-lg font-medium text-slate-300 hover:text-white transition-colors"
+                onclick="window.location.href='/whiteboard.html'">WhiteBoard</button>
+            <button class="text-lg font-medium text-slate-300 hover:text-white transition-colors"
+                onclick="window.location.href='/goals.html'">Goal Tracker</button>
+            <button class="text-lg font-medium text-white transition-colors">Task Management</button>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="pt-28 px-8 pb-10 min-h-screen">
+        <div class="max-w-7xl mx-auto">
+            <header class="mb-8 border-b border-slate-800 pb-4 flex justify-between items-end">
+                <div>
+                    <h1 class="text-5xl font-bold text-white mb-2">Task Board</h1>
+                    <p class="text-slate-400 text-lg">Focus. Flow. Finish.</p>
+                </div>
+                <button
+                    class="px-6 py-3 bg-amber-500 text-black font-bold rounded-lg hover:bg-amber-400 transition-colors">
+                    + New Task
+                </button>
+            </header>
+
+            <!-- Kanban Board Placeholder -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 h-[600px]">
+
+                <!-- TO DO -->
+                <div class="bg-slate-900/50 rounded-xl border border-white/5 p-4 flex flex-col">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider">To Do</h3>
+                        <span class="bg-slate-800 text-slate-400 text-xs px-2 py-1 rounded">3</span>
+                    </div>
+                    <div class="space-y-3">
+                        <div
+                            class="bg-slate-800 p-4 rounded-lg border border-white/5 hover:border-amber-500/50 transition-colors cursor-pointer group">
+                            <div class="text-white font-medium mb-2 group-hover:text-amber-400 transition-colors">Design
+                                Database Schema</div>
+                            <div class="flex justify-between items-center text-xs text-slate-500">
+                                <span>High Priority</span>
+                                <span>Ticket #1024</span>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-slate-800 p-4 rounded-lg border border-white/5 hover:border-amber-500/50 transition-colors cursor-pointer">
+                            <div class="text-white font-medium mb-2">API Authentication</div>
+                            <div class="flex justify-between items-center text-xs text-slate-500">
+                                <span>Medium Priority</span>
+                                <span>Ticket #1025</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IN PROGRESS -->
+                <div class="bg-slate-900/50 rounded-xl border border-amber-500/10 p-4 flex flex-col">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-sm font-bold text-amber-500 uppercase tracking-wider">In Progress</h3>
+                        <span class="bg-amber-900/20 text-amber-500 text-xs px-2 py-1 rounded">1</span>
+                    </div>
+                    <div class="space-y-3">
+                        <div
+                            class="bg-slate-800 p-4 rounded-lg border border-amber-500/30 shadow-lg shadow-amber-900/10 cursor-pointer">
+                            <div class="text-white font-medium mb-2">Frontend Animation Logic</div>
+                            <div class="w-full bg-slate-700 h-1.5 rounded-full overflow-hidden mb-2">
+                                <div class="bg-amber-500 w-2/3 h-full rounded-full"></div>
+                            </div>
+                            <div class="flex justify-between items-center text-xs text-slate-500">
+                                <span class="text-amber-400">In Development</span>
+                                <span>Ticket #1020</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DONE -->
+                <div class="bg-slate-900/50 rounded-xl border border-white/5 p-4 flex flex-col">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-sm font-bold text-emerald-500 uppercase tracking-wider">Done</h3>
+                        <span class="bg-emerald-900/20 text-emerald-500 text-xs px-2 py-1 rounded">12</span>
+                    </div>
+                    <div class="space-y-3 opacity-70 hover:opacity-100 transition-opacity">
+                        <div class="bg-slate-800 p-4 rounded-lg border border-emerald-500/20 cursor-pointer">
+                            <div class="text-slate-300 font-medium mb-2 line-through decoration-emerald-500/50">Project
+                                Setup</div>
+                            <div class="flex justify-between items-center text-xs text-slate-500">
+                                <span class="text-emerald-500">Completed</span>
+                                <span>Ticket #1001</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="/src/app.js"></script>
+    <script type="module" src="/src/style.css"></script>
+</body>
+
+</html>
