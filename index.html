@@ -10,6 +10,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Great+Vibes&display=swap"
         rel="stylesheet">
+    <style>
+        html,
+        body {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .opacity-0 {
+            opacity: 0;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 
 <body class="bg-black text-white font-sans overflow-x-hidden selection:bg-blue-500 selection:text-white">
@@ -245,7 +260,7 @@
 
                     <!-- Custom Cursor -->
                     <div id="whiteboard-cursor"
-                        class="pointer-events-none fixed top-0 left-0 z-50 flex flex-col items-center justify-center text-center opacity-0 transition-opacity duration-200">
+                        class="pointer-events-none fixed top-0 left-0 z-[100] flex flex-col items-center justify-center text-center opacity-0 transition-opacity duration-200">
                         <div
                             class="w-16 h-16 bg-emerald-500/20 backdrop-blur-sm rounded-full border border-emerald-400/40 flex items-center justify-center">
                             <span class="text-emerald-200 font-bold tracking-widest text-[10px]">DIVE IN</span>
@@ -329,7 +344,7 @@
 
                     <!-- Custom Cursor -->
                     <div id="goals-cursor"
-                        class="pointer-events-none fixed top-0 left-0 z-50 flex flex-col items-center justify-center text-center opacity-0 transition-opacity duration-200">
+                        class="pointer-events-none fixed top-0 left-0 z-[100] flex flex-col items-center justify-center text-center opacity-0 transition-opacity duration-200">
                         <div
                             class="w-16 h-16 bg-emerald-500/20 backdrop-blur-sm rounded-full border border-emerald-400/40 flex items-center justify-center">
                             <span class="text-emerald-200 font-bold tracking-widest text-[10px]">TRACK IT</span>
@@ -366,10 +381,11 @@
                             </div>
                         </div>
 
-                        <!-- Orbiting Milestones -->
-                        <!-- Top -->
-                        <div class="milestone absolute top-[15%] left-1/2 -translate-x-1/2" data-status="complete"
-                            style="opacity: 0;">
+                        <!-- Orbiting Milestones (Radius 180px) -->
+
+                        <!-- Step 1: Top (-90deg) -->
+                        <div class="milestone absolute" data-status="complete"
+                            style="left: 50%; top: calc(50% - 180px); transform: translate(-50%, -50%); opacity: 0;">
                             <div
                                 class="w-12 h-12 rounded-full bg-slate-800 border-2 border-slate-600 flex items-center justify-center text-xl transition-all duration-300">
                                 ✅
@@ -377,9 +393,9 @@
                             <div class="text-xs text-center mt-2 text-slate-400 font-medium">Step 1</div>
                         </div>
 
-                        <!-- Top Right -->
-                        <div class="milestone absolute top-[25%] right-[15%]" data-status="complete"
-                            style="opacity: 0;">
+                        <!-- Step 2: Top Right (-30deg) -->
+                        <div class="milestone absolute" data-status="complete"
+                            style="left: calc(50% + 156px); top: calc(50% - 90px); transform: translate(-50%, -50%); opacity: 0;">
                             <div
                                 class="w-12 h-12 rounded-full bg-slate-800 border-2 border-slate-600 flex items-center justify-center text-xl transition-all duration-300">
                                 ✅
@@ -387,9 +403,9 @@
                             <div class="text-xs text-center mt-2 text-slate-400 font-medium">Step 2</div>
                         </div>
 
-                        <!-- Right -->
-                        <div class="milestone absolute top-1/2 right-[10%] -translate-y-1/2" data-status="progress"
-                            style="opacity: 0;">
+                        <!-- Step 3: Bottom Right (30deg) -->
+                        <div class="milestone absolute" data-status="progress"
+                            style="left: calc(50% + 156px); top: calc(50% + 90px); transform: translate(-50%, -50%); opacity: 0;">
                             <div
                                 class="w-12 h-12 rounded-full bg-slate-800 border-2 border-slate-600 flex items-center justify-center text-xl transition-all duration-300">
                                 🔄
@@ -397,9 +413,9 @@
                             <div class="text-xs text-center mt-2 text-slate-400 font-medium">Step 3</div>
                         </div>
 
-                        <!-- Bottom Right -->
-                        <div class="milestone absolute bottom-[25%] right-[15%]" data-status="pending"
-                            style="opacity: 0;">
+                        <!-- Step 4: Bottom (90deg) -->
+                        <div class="milestone absolute" data-status="pending"
+                            style="left: 50%; top: calc(50% + 180px); transform: translate(-50%, -50%); opacity: 0;">
                             <div
                                 class="w-12 h-12 rounded-full bg-slate-800 border-2 border-slate-600 flex items-center justify-center text-xl transition-all duration-300">
                                 ⏳
@@ -407,9 +423,9 @@
                             <div class="text-xs text-center mt-2 text-slate-400 font-medium">Step 4</div>
                         </div>
 
-                        <!-- Bottom Left -->
-                        <div class="milestone absolute bottom-[25%] left-[15%]" data-status="pending"
-                            style="opacity: 0;">
+                        <!-- Step 5: Bottom Left (150deg) -->
+                        <div class="milestone absolute" data-status="pending"
+                            style="left: calc(50% - 156px); top: calc(50% + 90px); transform: translate(-50%, -50%); opacity: 0;">
                             <div
                                 class="w-12 h-12 rounded-full bg-slate-800 border-2 border-slate-600 flex items-center justify-center text-xl transition-all duration-300">
                                 ⏳
@@ -417,9 +433,9 @@
                             <div class="text-xs text-center mt-2 text-slate-400 font-medium">Step 5</div>
                         </div>
 
-                        <!-- Left -->
-                        <div class="milestone absolute top-1/2 left-[10%] -translate-y-1/2" data-status="pending"
-                            style="opacity: 0;">
+                        <!-- Step 6: Top Left (210deg / -150deg) -->
+                        <div class="milestone absolute" data-status="pending"
+                            style="left: calc(50% - 156px); top: calc(50% - 90px); transform: translate(-50%, -50%); opacity: 0;">
                             <div
                                 class="w-12 h-12 rounded-full bg-slate-800 border-2 border-slate-600 flex items-center justify-center text-xl transition-all duration-300">
                                 ⏳
@@ -470,7 +486,7 @@
 
                     <!-- Custom Cursor -->
                     <div id="tasks-cursor"
-                        class="pointer-events-none fixed top-0 left-0 z-50 flex flex-col items-center justify-center text-center opacity-0 transition-opacity duration-200">
+                        class="pointer-events-none fixed top-0 left-0 z-[100] flex flex-col items-center justify-center text-center opacity-0 transition-opacity duration-200">
                         <div
                             class="w-16 h-16 bg-amber-500/20 backdrop-blur-sm rounded-full border border-amber-400/40 flex items-center justify-center">
                             <span class="text-amber-200 font-bold tracking-widest text-[10px]">EXECUTE</span>
@@ -800,7 +816,6 @@
     </main>
 
     <script type="module" src="/src/app.js"></script>
-    <script type="module" src="/src/style.css"></script>
 </body>
 
 </html>

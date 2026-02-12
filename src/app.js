@@ -1,3 +1,4 @@
+import "./style.css";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import ScrollToPlugin from "gsap/ScrollToPlugin";
@@ -11,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
     // 1. Initial Navbar & Line
-    tl.from("#firstPart", { y: -50, opacity: 0, duration: 0.8 })
+    tl.fromTo("#firstPart", { y: -50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8 })
         .to(".nav-btn", { y: 0, opacity: 1, duration: 0.6, stagger: 0.1 }, "-=0.2")
         .to("#nav-line", { scaleX: 1, duration: 0.8, ease: "expo.out" }, "-=0.4");
 
@@ -158,18 +159,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Staggered Text Animation (kept from original)
-        gsap.from(".feature-text-anim", {
-            y: 30,
-            opacity: 0,
-            duration: 0.8,
-            ease: "power3.out",
-            stagger: 0.2,
-            scrollTrigger: {
-                trigger: "#notes-feature",
-                start: "top 70%",
-                toggleActions: "play none none reverse"
+        gsap.fromTo(".feature-text-anim",
+            { y: 30, opacity: 0 },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                ease: "power3.out",
+                stagger: 0.2,
+                scrollTrigger: {
+                    trigger: "#notes-feature",
+                    start: "top 70%",
+                    toggleActions: "play none none reverse"
+                }
             }
-        });
+        );
     }
 
     // --- WHITEBOARD HANDWRITTEN ANIMATION ---
@@ -209,18 +213,21 @@ document.addEventListener('DOMContentLoaded', () => {
             }, "-=0.5");
 
         // Staggered Text Animation for whiteboard
-        gsap.from(".whiteboard-text-anim", {
-            y: 30,
-            opacity: 0,
-            duration: 0.8,
-            ease: "power3.out",
-            stagger: 0.2,
-            scrollTrigger: {
-                trigger: "#whiteboard-feature",
-                start: "top 70%",
-                toggleActions: "play none none reverse"
+        gsap.fromTo(".whiteboard-text-anim",
+            { y: 30, opacity: 0 },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                ease: "power3.out",
+                stagger: 0.2,
+                scrollTrigger: {
+                    trigger: "#whiteboard-feature",
+                    start: "top 70%",
+                    toggleActions: "play none none reverse"
+                }
             }
-        });
+        );
     }
 
     // --- WHITEBOARD CURSOR & NAVIGATION ---
@@ -373,18 +380,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Text Stagger Animation
-        gsap.from(".goals-text-anim", {
-            y: 30,
-            opacity: 0,
-            duration: 0.8,
-            ease: "power3.out",
-            stagger: 0.2,
-            scrollTrigger: {
-                trigger: "#goals-feature",
-                start: "top 70%",
-                toggleActions: "play none none reverse"
+        gsap.fromTo(".goals-text-anim",
+            { y: 30, opacity: 0 },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                ease: "power3.out",
+                stagger: 0.2,
+                scrollTrigger: {
+                    trigger: "#goals-feature",
+                    start: "top 70%",
+                    toggleActions: "play none none reverse"
+                }
             }
-        });
+        );
 
         // Click Navigation
         goalsContainer.addEventListener("click", () => {
@@ -510,18 +520,21 @@ document.addEventListener('DOMContentLoaded', () => {
             }); // Show off completed state
 
         // Text Stagger Animation
-        gsap.from(".tasks-text-anim", {
-            y: 30,
-            opacity: 0,
-            duration: 0.8,
-            ease: "power3.out",
-            stagger: 0.2,
-            scrollTrigger: {
-                trigger: "#tasks-feature",
-                start: "top 70%",
-                toggleActions: "play none none reverse"
+        gsap.fromTo(".tasks-text-anim",
+            { y: 30, opacity: 0 },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                ease: "power3.out",
+                stagger: 0.2,
+                scrollTrigger: {
+                    trigger: "#tasks-feature",
+                    start: "top 70%",
+                    toggleActions: "play none none reverse"
+                }
             }
-        });
+        );
 
         // Click Navigation
         tasksContainer.addEventListener("click", () => {
@@ -687,16 +700,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 3. Breathing Text (More pronounced)
-    gsap.to(".cta-title", {
-        y: -10,
-        scale: 1.02,
-        textShadow: "0 0 30px rgba(59, 130, 246, 0.3)",
-        duration: 4,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut"
-    });
+    // 3. Breathing Text (Removed by request)
+    // Code removed
 
     // 4. Pulsing Button (Action Signal)
     gsap.to(".cta-button", {
